@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.header p {
+    margin: 5px 5px;
+    font-size: x-large;
+    font-weight: bolder;
+    color: #36678f;
+}

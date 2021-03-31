@@ -1,0 +1,7 @@
+.BookItem {
+    cursor: pointer;
+}
+
+.BookItem:hover {
+    background-color: #e0e0e0;
+}

@@ -1,0 +1,12 @@
+.RegBox {
+    display: flex;
+    flex-direction: row;
+}
+
+.RegBox button {
+    margin: 0 7px;
+}
+
+.RegBox p {
+    color: grey;
+}
