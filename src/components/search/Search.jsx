@@ -4,7 +4,8 @@ import './Search.css'
 function Search() {
     return (
         <div className='SearchBox'>
-            <input type="search" className='Search'/>
+            <input type="text" className='Search'/>
+            <button className='SearchBtn'>Search</button>
         </div>
     )
 }

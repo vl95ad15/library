@@ -1,10 +1,11 @@
 import { Table } from 'reactstrap';
 import books from "../../data/books";
 import './Table.css';
+import ModalBtn from "../buttons/ModalBtn";
 
 export default function BooksTable() {
     return (
-        <Table>
+        <Table striped>
             <thead>
             <tr>
                 <th>Name</th>
@@ -13,6 +14,7 @@ export default function BooksTable() {
                 <th>Pages</th>
                 <th>Published</th>
                 <th>Status</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
@@ -24,6 +26,7 @@ export default function BooksTable() {
                     <td>{book.pages}</td>
                     <td>{book.published}</td>
                     <td>{book.status}</td>
+                    <ModalBtn title='info' color='secondary'/>
                 </tr>
             )}
             </tbody>

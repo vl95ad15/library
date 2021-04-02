@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Context } from '../../../../context/context'
 import {Button} from "reactstrap";
-import RegBtn from "../../../buttons/RegBtn";
+import ModalBtn from "../../../buttons/ModalBtn";
 import LoginModal from "../../../modals/loginModal/LoginModal";
 import SignupModal from "../../../modals/signupModal/SignupModal";
 import './RegBox.css'
@@ -11,8 +11,8 @@ function RegBox() {
     if (!isLogged) {
         return (
             <div className='RegBox'>
-                <RegBtn title="Login" form={<LoginModal/>}/>
-                <RegBtn title="Signup" form={<SignupModal/>}/>
+                <ModalBtn color='info' title="Login" modalBody={<LoginModal/>}/>
+                <ModalBtn color='info' title="Signup" modalBody={<SignupModal/>}/>
             </div>
         )
     } else {

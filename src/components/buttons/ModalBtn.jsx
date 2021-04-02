@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import {Button, Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 
-function RegBtn(props) {
+function ModalBtn(props) {
 
-    const {className, form, title} = props;
+    const {className, modalBody, title, color} = props;
 
     const [modal, setModal] = useState(false);
 
@@ -11,11 +11,11 @@ function RegBtn(props) {
 
     return (
         <div className='RegBox'>
-            <Button color='success' onClick={toggle}>{title}</Button>
+            <Button color={color} onClick={toggle}>{title}</Button>
                 <Modal isOpen={modal} toggle={toggle} className={className}>
                     <ModalHeader toggle={toggle}>{title}</ModalHeader>
                     <ModalBody>
-                        {form}
+                        {modalBody}
                     </ModalBody>
                     <ModalFooter>
                         <Button color="primary" onClick={toggle}>Text</Button>
@@ -25,4 +25,4 @@ function RegBtn(props) {
     )
 }
 
-export default RegBtn
+export default ModalBtn
