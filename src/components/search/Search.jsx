@@ -5,7 +5,7 @@ function Search() {
     return (
         <div className='SearchBox'>
             <input type="text" className='Search'/>
-            <button className='SearchBtn'>Search</button>
+            <button className='SearchBtn'><i className='fa fa-search'/></button>
         </div>
     )
 }

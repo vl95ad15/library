@@ -26,7 +26,7 @@ export default function BooksTable() {
                     <td>{book.pages}</td>
                     <td>{book.published}</td>
                     <td>{book.status}</td>
-                    <ModalBtn title='info' color='secondary'/>
+                    <td><ModalBtn headerTitle='Information' title={<i className='fa fa-info-circle'/>} color='secondary'/></td>
                 </tr>
             )}
             </tbody>

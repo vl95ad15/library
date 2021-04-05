@@ -2,6 +2,8 @@
     cursor: pointer;
 }
 
-main {
+#main {
     padding: 20px 50px;
+    display: flex;
+    flex-direction: row;
 }
