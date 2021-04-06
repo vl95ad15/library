@@ -1,11 +1,11 @@
-import { Table } from 'reactstrap';
+import {Button, Table} from 'reactstrap';
 import books from "../../data/books";
 import './Table.css';
 import ModalBtn from "../buttons/ModalBtn";
 
 export default function BooksTable() {
     return (
-        <Table striped>
+        <Table>
             <thead>
             <tr>
                 <th>Name</th>
@@ -14,19 +14,22 @@ export default function BooksTable() {
                 <th>Pages</th>
                 <th>Published</th>
                 <th>Status</th>
-                <th>Action</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
             {books.map(book =>
-                <tr key={book.bookID} className='BookItem'>
-                    <td>{book.bookName}</td>
-                    <td>{book.bookAuthor}</td>
+                <tr key={book.id} className='BookItem'>
+                    <td>{book.name}</td>
+                    <td>{book.authors.name}</td>
                     <td>{book.genre}</td>
                     <td>{book.pages}</td>
                     <td>{book.published}</td>
                     <td>{book.status}</td>
-                    <td><ModalBtn headerTitle='Information' title={<i className='fa fa-info-circle'/>} color='secondary'/></td>
+                    <td className='BtnContainer'>
+                        <ModalBtn headerTitle='Information' title={<i className='fa fa-info-circle'/>} color='secondary'/>
+                        <Button color='success'><i className='fa fa-plus-circle'/></Button>
+                    </td>
                 </tr>
             )}
             </tbody>

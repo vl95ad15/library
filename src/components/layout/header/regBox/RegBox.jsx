@@ -11,8 +11,8 @@ function RegBox() {
     if (!isLogged) {
         return (
             <div className='RegBox'>
-                <ModalBtn color='info' title="Login" modalBody={<LoginModal/>}/>
-                <ModalBtn color='info' title="Signup" modalBody={<SignupModal/>}/>
+                <ModalBtn color='info' title="Login" headerTitle='Login' modalBody={<LoginModal/>}/>
+                <ModalBtn color='info' title="Signup" headerTitle='Signup' modalBody={<SignupModal/>}/>
             </div>
         )
     } else {
