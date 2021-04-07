@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import {Button, Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 
+import './ModalBtn.css';
+
 function ModalBtn(props) {
 
     const {className, modalBody, title, headerTitle, color} = props;
@@ -18,7 +20,7 @@ function ModalBtn(props) {
                         {modalBody}
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="primary" onClick={toggle}>Text</Button>
+                        <Button color="primary" onClick={toggle}>Submit</Button>
                     </ModalFooter>
                 </Modal>
         </div>

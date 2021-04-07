@@ -8,3 +8,9 @@
     background-color: grey;
     border: 2px solid grey
 }
+
+.SearchBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}

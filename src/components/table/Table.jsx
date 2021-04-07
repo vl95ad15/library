@@ -21,7 +21,7 @@ export default function BooksTable() {
             {books.map(book =>
                 <tr key={book.id} className='BookItem'>
                     <td>{book.name}</td>
-                    <td>{book.authors.name}</td>
+                    <td>{book.authors.map(i => i.name)}</td>
                     <td>{book.genre}</td>
                     <td>{book.pages}</td>
                     <td>{book.published}</td>

@@ -1,0 +1,19 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+#userName, #email, #password {
+    margin-bottom: 10px;
+}
+
+form > button {
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+}
+
+form > button:hover {
+    background-color: #bfbfbf;
+}

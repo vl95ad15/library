@@ -1,12 +1,13 @@
-.RegBox {
+.LogoutBox, .RegBox {
     display: flex;
     flex-direction: row;
 }
 
-.RegBox button {
+.LogoutBox > button, .RegBox > button {
     margin: 0 7px;
 }
 
-.RegBox p {
+.LogoutBox p {
     color: grey;
+    font-size: large;
 }

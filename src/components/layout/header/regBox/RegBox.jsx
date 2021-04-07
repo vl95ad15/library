@@ -7,7 +7,7 @@ import SignupModal from "../../../modals/signupModal/SignupModal";
 import './RegBox.css'
 
 function RegBox() {
-    const {isLogged, logOut, userName } = useContext(Context);
+    const { isLogged, logOut, userName } = useContext(Context);
     if (!isLogged) {
         return (
             <div className='RegBox'>
@@ -17,7 +17,7 @@ function RegBox() {
         )
     } else {
         return (
-            <div className='RegBox'>
+            <div className='LogoutBox'>
                 <p>{userName}</p>
                 <Button onClick={logOut}>Logout</Button>
             </div>
