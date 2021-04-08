@@ -2,32 +2,35 @@ import Book from "../model/Book";
 import Author from "../model/Author";
 const faker = require('faker');
 
-const books = [];
-const maxAuthAmount = 3;
-const maxBooksAmount = 15;
+const MAX_AUTH_AMOUNT = 3;
+const MAX_BOOKS_AMOUNT = 11;
 
-for (let i = 0; i < maxBooksAmount; i++) {
-
-    const authorsArray = [];
-    for (let j = 0; j <= (Math.floor(Math.random() * maxAuthAmount)); j++){
+function getAuthors(authAmount = MAX_AUTH_AMOUNT) {
+    const authorsArray = []
+    for (let j = 0; j <= authAmount; j++) {
         const author:Author = new Author(faker.datatype.number(), faker.name.findName());
         authorsArray.push(author)
     }
-
-    const book:Book = new Book(
-        faker.datatype.number(),
-        faker.datatype.number(),
-        faker.random.word(),
-        authorsArray,
-        faker.datatype.number(),
-        faker.datatype.boolean().toString(),
-        faker.date.past().getFullYear(),
-        faker.music.genre(),
-        faker.datatype.number()
-    )
-    console.log(book)
-
-    books.push(book);
+    return authorsArray
 }
 
-export default books
+function getBooks(booksAmount = MAX_BOOKS_AMOUNT){
+    const books = [];
+    for (let i = 0; i < booksAmount; i++) {
+        const book:Book = new Book(
+            faker.datatype.number(),
+            faker.datatype.number(),
+            faker.random.word(),
+            getAuthors(Math.floor(Math.random() * 3)),
+            Math.floor(faker.datatype.number() / 125),
+            faker.datatype.boolean().toString(),
+            faker.date.past().getFullYear(),
+            faker.music.genre(),
+            faker.datatype.number()
+        )
+        books.push(book);
+    }
+    return books
+}
+
+export default getBooks()
