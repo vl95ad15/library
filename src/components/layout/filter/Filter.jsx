@@ -1,6 +1,7 @@
 import { List } from "reactstrap";
 import books from "../../../data/books";
 import "./Filter.css"
+import FilterItem from "./FilterItem";
 
 function Filter() {
 
@@ -16,14 +17,14 @@ function Filter() {
         <List type="unstyled" className='FilterList'>
             <li className='HeaderList'>Genre</li>
             <ul>
-                {uniqueBookGenresArray.map((item, index) =>
-                    <li key={index.toString()}><label id='label'><input type='checkbox'/>{item}</label></li>
+                {uniqueBookGenresArray.map((item, i) =>
+                    <li key={i}><FilterItem text={item}/></li>
                 )}
             </ul>
             <li className='HeaderList'>Status</li>
             <ul>
-                {uniqueBookStatusArray.map((item, index) =>
-                    <li key={index.toString()}><label id='label'><input type='checkbox'/>{item}</label></li>
+                {uniqueBookStatusArray.map((item, i) =>
+                    <li key={i}><FilterItem text={item}/></li>
                 )}
             </ul>
         </List>
