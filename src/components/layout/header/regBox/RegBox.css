@@ -1,9 +1,9 @@
-.LogoutBox, .RegBox {
+.LogoutBox, .BtnBox {
     display: flex;
     flex-direction: row;
 }
 
-.LogoutBox > button, .RegBox > button {
+.LogoutBox > button, .BtnBox > button {
     margin: 0 7px;
 }
 

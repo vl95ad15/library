@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 import { Context } from '../../../context/context';
-import { client } from '../../../client/client';
+import { client } from '../../../client';
 import './LoginModal.css';
 
-function LoginModal(props) {
+function LoginModal() {
 
     const { setIsLogged } = useContext(Context);
     const [email, setEmail] = useState("");

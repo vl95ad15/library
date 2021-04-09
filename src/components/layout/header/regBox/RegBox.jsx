@@ -10,7 +10,7 @@ function RegBox() {
     const { isLogged, logOut, userName } = useContext(Context);
     if (!isLogged) {
         return (
-            <div className='RegBox'>
+            <div className='BtnBox'>
                 <ModalBtn color='info' title="Login" headerTitle='Login' modalBody={<LoginModal/>}/>
                 <ModalBtn color='info' title="Signup" headerTitle='Signup' modalBody={<SignupModal/>}/>
             </div>

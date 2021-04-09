@@ -20,10 +20,3 @@ li {
 input[type=checkbox] {
     margin: .4rem .3rem;
 }
-
-#label {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    text-wrap: none;
-}

@@ -35,6 +35,12 @@ class SignupModal extends React.Component {
         const newUser = {
             id: v4(),
             ...this.state,
+            account: {
+                id: v4(),
+                created: new Date().toLocaleDateString(),
+                readAmount: 0,
+                status: "active"
+            }
         };
 
         await client.signUp(newUser);

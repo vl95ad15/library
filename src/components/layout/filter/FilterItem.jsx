@@ -4,7 +4,7 @@ function FilterItem(props) {
     const [checked, setChecked] = useState(false);
 
     return(
-        <label id='label'>
+        <label>
             <input type='checkbox' checked={checked} onChange={() => setChecked(!checked)}/>
             {props.text}
         </label>

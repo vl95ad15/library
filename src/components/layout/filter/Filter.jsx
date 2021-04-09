@@ -1,29 +1,33 @@
-import { List } from "reactstrap";
+import {List} from "reactstrap";
 import books from "../../../data/books";
 import "./Filter.css"
 import FilterItem from "./FilterItem";
 
 function Filter() {
 
-    const bookGenresArray = [];
-    books.sort((a, b) => a.genre.localeCompare(b.genre)).forEach(item => bookGenresArray.push(item.genre))
-    const uniqueBookGenresArray = [...new Set(bookGenresArray)];
+    const getGenresArray = (array) => {
+        const bookGenresArray = [];
+        array.forEach(item => bookGenresArray.push(item.genre));
+        return [...new Set(bookGenresArray)]                      // <-- returns array without duplicates
+    }
 
-    const bookStatusArray = [];
-    books.sort((a, b) => a.genre.localeCompare(b.status)).forEach(item => bookStatusArray.push(item.status))
-    const uniqueBookStatusArray = [...new Set(bookStatusArray)];
+    const getStatusArray = array => {
+        const bookStatusArray = [];
+        array.forEach(item => bookStatusArray.push(item.status));
+        return [...new Set(bookStatusArray)]
+    }
 
     return(
         <List type="unstyled" className='FilterList'>
             <li className='HeaderList'>Genre</li>
             <ul>
-                {uniqueBookGenresArray.map((item, i) =>
+                {getGenresArray(books).map((item, i) =>
                     <li key={i}><FilterItem text={item}/></li>
                 )}
             </ul>
             <li className='HeaderList'>Status</li>
             <ul>
-                {uniqueBookStatusArray.map((item, i) =>
+                {getStatusArray(books).map((item, i) =>
                     <li key={i}><FilterItem text={item}/></li>
                 )}
             </ul>
