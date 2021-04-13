@@ -12,12 +12,12 @@ export const client = {
         const params = {email};
         const {data} = await axiosInstance.get("users", {params});
         const user = data.find((us) => us);
-        return user?.password === password;
+        return user?._password === password;
     },
     getUsernameByEmail: async (email) => {
         const params = {email};
         const {data} = await axiosInstance.get("users", {params});
         const user = data.find((us) => us);
-        return user?.userName;
+        return user?._name;
     }
 }

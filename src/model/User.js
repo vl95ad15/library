@@ -1,9 +1,10 @@
 export default class User {
-    constructor(id: number, name: string, email: string, password: string) {
+    constructor(id: number, name: string, email: string, password: string, account: any) {
         this._id = id;
         this._name = name;
         this._email = email;
         this._password = password;
+        this._account = account;
     }
 
     get id(): number {
@@ -20,6 +21,10 @@ export default class User {
 
     get password(): string {
         return this._password;
+    }
+
+    get account(): any {
+        return this._account;
     }
 
 }

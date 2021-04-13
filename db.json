@@ -1,10 +1,18 @@
 {
   "users": [
     {
-      "id": "95d5c5cb-71e8-48dc-b3ab-5b5a027ed2df",
-      "userName": "user",
-      "email": "123@mail.ru",
-      "password": "123"
+      "_id": "5196d92e-0a23-4ed2-8fc1-f25e2b668217",
+      "_name": "user",
+      "_email": "123@mail.ru",
+      "_password": "123",
+      "_account": {
+        "_id": "a01e2346-6b79-4a5f-99e6-825167362ef4",
+        "_userName": "user",
+        "_readAmount": 0,
+        "_created": "4/13/2021",
+        "_status": "active"
+      },
+      "id": 2
     }
   ]
 }

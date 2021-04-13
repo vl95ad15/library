@@ -1,61 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import { v4 } from "uuid";
 import { client } from "../../../client";
+import User from "../../../model/User";
+import Account from "../../../model/Account";
 
 import './SignupModal.css';
 
-class SignupModal extends React.Component {
-    state = {
-        userName: "",
-        email: "",
-        password: ""
-    };
+function SignupModal() {
 
-    setUserName = (e) => {
-        this.setState({
-            userName: e.target.value,
-        });
-    };
+    const [userName, setUserName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-    setEmail = (e) => {
-        this.setState({
-            email: e.target.value,
-        });
-    };
-
-    setPassword = (e) => {
-        this.setState({
-            password: e.target.value,
-        });
-    };
-
-    onSubmit = async (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
 
-        const newUser = {
-            id: v4(),
-            ...this.state,
-            account: {
-                id: v4(),
-                created: new Date().toLocaleDateString(),
-                readAmount: 0,
-                status: "active"
-            }
-        };
+        const account:Account = new Account(v4(), userName, 0, new Date().toLocaleDateString(), "active")
+        const user:User = new User(v4(), userName, email, password, account)
 
-        await client.signUp(newUser);
+        await client.signUp(user);
     };
 
-    render() {
-        return (
-            <form onSubmit={this.onSubmit}>
-                <input id='userName' name="userName" type="text" placeholder="Enter your name..." onChange={this.setUserName} required />
-                <input id='email' name="email" type="email" placeholder="Enter your email..." onChange={this.setEmail} required />
-                <input id='password' name="password" type="password" placeholder="Enter your password..." onChange={this.setPassword} required />
-                <button type="submit">Sign up</button>
-            </form>
-        )
-    }
+    return(
+        <form onSubmit={onSubmit}>
+            <input id='userName' name="userName" type="text" placeholder="Enter your name..."
+                   onChange={(e) => setUserName(e.target.value)} required />
+            <input id='email' name="email" type="email" placeholder="Enter your email..."
+                   onChange={(e) => setEmail(e.target.value)} required />
+            <input id='password' name="password" type="password" placeholder="Enter your password..."
+                   onChange={(e) => setPassword(e.target.value)} required />
+            <button type="submit">Sign up</button>
+        </form>
+    )
 }
 
 export default SignupModal
