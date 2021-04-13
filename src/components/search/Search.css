@@ -1,16 +1,17 @@
 .Search {
     width: 500px;
-    border: 2px solid grey
+    border: 2px solid grey;
 }
 
 .SearchBtn {
     color: white;
     background-color: grey;
-    border: 2px solid grey
+    border: 2px solid grey;
 }
 
 .SearchBox {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    display: none;
 }
