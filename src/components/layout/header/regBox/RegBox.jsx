@@ -4,10 +4,13 @@ import {Button} from "reactstrap";
 import ModalBtn from "../../../buttons/ModalBtn";
 import LoginModal from "../../../modals/loginModal/LoginModal";
 import SignupModal from "../../../modals/signupModal/SignupModal";
+import OrderModal from "../../../modals/orderModal/OrderModal";
+import { orderArr } from "../../../../model/NewOrder";
 import './RegBox.css'
 
 function RegBox() {
     const { isLogged, logOut, userName } = useContext(Context);
+
     if (!isLogged) {
         return (
             <div className='BtnBox'>
@@ -18,12 +21,15 @@ function RegBox() {
     } else {
         return (
             <div className='LogoutBox'>
+                <div className='BooksOrderCount'>
+                    <ModalBtn color='info' title={<i className="fa fa-book"/>} headerTitle='My orders' modalBody={<OrderModal/>}/>
+                    <span className='OrderCounter'>{orderArr.length !== 0 ? orderArr.length : null}</span>
+                </div>
                 <p>{userName}</p>
                 <Button onClick={logOut}>Logout</Button>
             </div>
         )
     }
-
 }
 
 export default RegBox

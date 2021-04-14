@@ -4,19 +4,25 @@ table {
 }
 
 th, td {
-    border: 1px solid #c9c9c9;
+    border: 1px solid #dedede;
     padding: 10px;
 }
 
+tr:hover {
+    background-color: #dedede;
+}
+
 th {
-    background-color: #e0e0e0;
+    background-color: #dedede;
 }
 
 .searchField {
     width: 100%;
-    border: 1px solid black;
+    border: none;
+    /*border: 2px solid #878787;*/
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
     border-radius: 5px;
-    padding: 5px;
+    padding: 7px;
     margin-bottom: 10px;
 }
 

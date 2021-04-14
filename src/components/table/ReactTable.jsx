@@ -1,11 +1,10 @@
 import React, { useMemo, useState } from "react";
 import { useTable, useAsyncDebounce, useFilters, useGlobalFilter, useSortBy } from "react-table";
 import ModalBtn from "../buttons/ModalBtn";
-import { Button } from "reactstrap";
+import AddToOrderBtn from "../buttons/AddToOrderBtn";
 import books from "../../data/books";
 
 import './ReactTable.css';
-
 
 function GlobalFilter({ preGlobalFilteredRows, globalFilter, setGlobalFilter }){
     const count = preGlobalFilteredRows.length;
@@ -27,18 +26,6 @@ function GlobalFilter({ preGlobalFilteredRows, globalFilter, setGlobalFilter }){
         />
     )
 }
-
-// function DefaultColumnFilter({column: { filterValue, setFilter }}) {
-//
-//     return (
-//         <input
-//             value={filterValue || ""}
-//             onChange={e => {
-//                 setFilter(e.target.value || undefined);
-//             }}
-//         />
-//     );
-// }
 
 function MultiCheckBoxColumnFilter({column: { setFilter, preFilteredRows, id }}) {
 
@@ -77,8 +64,6 @@ function MultiCheckBoxColumnFilter({column: { setFilter, preFilteredRows, id }})
                     <label className='filterItem' key={i} htmlFor={option}>
                         <input
                             type="checkbox"
-                            color="primary"
-                            size="small"
                             name={option}
                             id={option}
                             checked={checked.includes(option)}
@@ -134,12 +119,7 @@ function ReactTable() {
         },
     ], []);
 
-    const filterTypes = useMemo(
-        () => ({
-            // multiSelect: (rows, id, filterValues) => {
-            //     if (filterValues.length === 0) return rows;
-            //     return rows.filter(r => filterValues.includes(r.values[id]));
-            // },
+    const filterTypes = useMemo(() => ({
             text: (rows, id, filterValue) => {
                 return rows.filter(row => {
                     const rowValue = row.values[id];
@@ -179,13 +159,12 @@ function ReactTable() {
                 <div {...headerGroup.getHeaderGroupProps()}>
                     {headerGroup.headers.map(column => (
                         <div key={column.render("Header")}>
-                            {/*{column.canFilter ? column.render("Header") : null}*/}
                             <div>{column.canFilter ? column.render("Filter") : null}</div>
                         </div>
                     ))}
                 </div>
             ))}
-        <table {...getTableProps()} style={{ border: 'solid 1px black' }}>
+        <table {...getTableProps()}>
             <thead>
             {headerGroups.map(headerGroup => (
                 <tr {...headerGroup.getHeaderGroupProps()}>
@@ -215,7 +194,7 @@ function ReactTable() {
                                             ? <div className='BtnContainer'>
                                                 <ModalBtn headerTitle='Information' title={<i className='fa fa-info-circle'/>}
                                                           color='secondary'/>
-                                                <Button color='success'><i className='fa fa-plus-circle'/></Button>
+                                                <AddToOrderBtn/>
                                             </div> : cell.render("Cell")}
                                 </td>
                             );

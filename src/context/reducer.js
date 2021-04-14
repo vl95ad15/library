@@ -1,4 +1,4 @@
-import { IS_LOGGED, LOG_OUT } from "./types";
+import { IS_LOGGED, LOG_OUT, ADD_BOOK } from "./types";
 
 export default function Reducer(state, action) {
     switch (action.type) {
@@ -11,6 +11,10 @@ export default function Reducer(state, action) {
         case LOG_OUT:
             return {
                 ...state, isLogged: false
+            }
+        case ADD_BOOK:
+            return {
+                ...state
             }
         default:
             return state

@@ -11,3 +11,12 @@
     color: grey;
     font-size: large;
 }
+
+.BooksOrderCount {
+    display: flex;
+    align-items: center;
+}
+
+.OrderCounter {
+    margin-right: 5px;
+}

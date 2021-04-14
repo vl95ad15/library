@@ -1,14 +1,20 @@
 export default class Order {
-    constructor(userID: number,
+    constructor(id: number,
+                userID: number,
                 librarianID: number,
                 books: [],
                 executionTime: Date,
                 status: string) {
+        this._id = id;
         this._userID = userID;
         this._librarianID = librarianID;
         this._books = books;
         this._executionTime = executionTime;
         this._status = status;
+    }
+
+    get id(): number {
+        return this._id;
     }
 
     get userID(): number {
