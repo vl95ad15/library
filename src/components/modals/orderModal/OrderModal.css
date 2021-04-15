@@ -1,0 +1,14 @@
+.OrderBox > p {
+    display: flex;
+    justify-content: center;
+}
+
+.OrderItem {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 5px auto;
+    border-radius: 10px;
+    background-color: #93acc7;
+    padding: 10px 20px;
+}

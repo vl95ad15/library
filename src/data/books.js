@@ -30,6 +30,7 @@ function getBooks(booksAmount = MAX_BOOKS_AMOUNT){
         )
         books.push(book);
     }
+
     return books
 }
 

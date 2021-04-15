@@ -1,13 +1,16 @@
 import React, { useReducer } from 'react';
 import { Context } from './context';
 import Reducer from './reducer';
+import books from "../data/books";
 
 import { IS_LOGGED, LOG_OUT } from "./types";
 
 const State = ({children}) => {
     const initialState = {
         userName: "",
-        isLogged: false
+        isLogged: false,
+        booksArray: books,
+        orderedBooks: []
     }
 
     const [state, dispatch] = useReducer(Reducer, initialState);

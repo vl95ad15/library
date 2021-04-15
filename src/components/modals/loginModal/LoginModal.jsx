@@ -12,7 +12,8 @@ function LoginModal() {
     const onSubmit = async (e) => {
         e.preventDefault();
         const isValidPassword = await client.checkPassword(email, password);
-        if (isValidPassword) {
+        const isValidEmail = await client.checkEmail(email);
+        if (isValidPassword && isValidEmail) {
             const userName = await client.getUsernameByEmail(email);
             setIsLogged(userName);
         } else {

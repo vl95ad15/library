@@ -5,7 +5,6 @@ import ModalBtn from "../../../buttons/ModalBtn";
 import LoginModal from "../../../modals/loginModal/LoginModal";
 import SignupModal from "../../../modals/signupModal/SignupModal";
 import OrderModal from "../../../modals/orderModal/OrderModal";
-import { orderArr } from "../../../../model/NewOrder";
 import './RegBox.css'
 
 function RegBox() {
@@ -21,11 +20,8 @@ function RegBox() {
     } else {
         return (
             <div className='LogoutBox'>
-                <div className='BooksOrderCount'>
-                    <ModalBtn color='info' title={<i className="fa fa-book"/>} headerTitle='My orders' modalBody={<OrderModal/>}/>
-                    <span className='OrderCounter'>{orderArr.length !== 0 ? orderArr.length : null}</span>
-                </div>
                 <p>{userName}</p>
+                <ModalBtn color='info' title={<i className="fa fa-book"/>} headerTitle='My orders' modalBody={<OrderModal/>}/>
                 <Button onClick={logOut}>Logout</Button>
             </div>
         )

@@ -3,9 +3,15 @@ import { orderArr } from "../../../model/NewOrder";
 
 function OrderModal() {
     return(
-        <div>
-            {orderArr.length !== 0 ? orderArr.map((item, i) => <ul>
-                    <li key={i}>{item._id} ({item._status})</li></ul>) : <p>You have no orders yet!</p>}
+        <div className='OrderBox'>
+            {orderArr.length !== 0 ?
+                orderArr.map((item, i) =>
+                        <div className='OrderItem' key={i}>
+                            <span>{item._id} ({item._status})</span>
+                            <span><i className="fa fa-times-circle"/></span>
+                        </div>)
+                            : <p>You have no orders yet.</p>
+            }
         </div>
     )
 }

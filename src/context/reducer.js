@@ -6,15 +6,17 @@ export default function Reducer(state, action) {
             return {
                 ...state,
                 isLogged: true,
-                userName: action.payload.userName,
+                userName: action.payload.userName
             }
         case LOG_OUT:
             return {
-                ...state, isLogged: false
+                ...state,
+                isLogged: false
             }
         case ADD_BOOK:
             return {
-                ...state
+                ...state,
+                id: action.id
             }
         default:
             return state
