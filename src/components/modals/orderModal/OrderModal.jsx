@@ -1,16 +1,30 @@
-import "./OrderModal.css"
-import { orderArr } from "../../../model/NewOrder";
+import React, { useState } from 'react';
+import { orderArr } from "../../buttons/AddToOrderBtn";
+
+import "./OrderModal.css";
 
 function OrderModal() {
+    const [orders, setOrders] = useState([])
+
+    const removeItemByIndex = (arr, value) => {
+        const index = arr.indexOf(value);
+        if (index > -1) {
+            arr.splice(index, 1);
+        }
+        return arr;
+    }
+
     return(
         <div className='OrderBox'>
             {orderArr.length !== 0 ?
                 orderArr.map((item, i) =>
                         <div className='OrderItem' key={i}>
-                            <span>{item._id} ({item._status})</span>
-                            <span><i className="fa fa-times-circle"/></span>
+                            <span>{item._name}</span>
+                            <span className='DeleteOrderItem' onClick={() => setOrders(removeItemByIndex(orderArr, item))}>
+                                <i className="fa fa-times-circle"/>
+                            </span>
                         </div>)
-                            : <p>You have no orders yet.</p>
+                            : <p>You haven't got any books in your order list.</p>
             }
         </div>
     )

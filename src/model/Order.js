@@ -2,13 +2,13 @@ export default class Order {
     constructor(id: number,
                 userID: number,
                 librarianID: number,
-                books: [],
+                booksArr: [],
                 executionTime: Date,
                 status: string) {
         this._id = id;
         this._userID = userID;
         this._librarianID = librarianID;
-        this._books = books;
+        this._booksArr = booksArr;
         this._executionTime = executionTime;
         this._status = status;
     }
@@ -25,12 +25,12 @@ export default class Order {
         return this._librarianID;
     }
 
-    get books(): [] {
-        return this._books;
+    get booksArr(): [] {
+        return this._booksArr;
     }
 
-    set books(newValue: []) {
-        this._books = newValue
+    set booksArr(newValue: []) {
+        this._booksArr = newValue
     }
 
     get executionTime(): Date {

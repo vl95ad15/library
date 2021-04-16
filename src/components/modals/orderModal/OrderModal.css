@@ -12,3 +12,7 @@
     background-color: #93acc7;
     padding: 10px 20px;
 }
+
+.DeleteOrderItem {
+    cursor: pointer;
+}

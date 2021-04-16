@@ -21,7 +21,7 @@ function RegBox() {
         return (
             <div className='LogoutBox'>
                 <p>{userName}</p>
-                <ModalBtn color='info' title={<i className="fa fa-book"/>} headerTitle='My orders' modalBody={<OrderModal/>}/>
+                <ModalBtn color='info' title={<i className="fa fa-book"/>} headerTitle='My order' modalBody={<OrderModal/>}/>
                 <Button onClick={logOut}>Logout</Button>
             </div>
         )

@@ -181,7 +181,7 @@ function ReactTable() {
             <tbody {...getTableBodyProps()}>
             {rows.map((row) => {
                 prepareRow(row);
-                console.log(row)
+                // console.log(row)
                 return (
                     <tr {...row.getRowProps()}>
                         {row.cells.map(cell => {
