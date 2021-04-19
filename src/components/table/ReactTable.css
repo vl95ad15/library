@@ -33,11 +33,21 @@ th {
 .checkBoxFilter {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     padding: 5px;
 }
 
 .filterItem {
-    padding: 5px;
+    padding: 0 7px;
+    cursor: pointer;
+}
+
+.filterItem > input {
+    margin-right: 3px;
+}
+
+.filterItem:hover {
+    color: #36678f;
 }
 
 .BtnContainer {

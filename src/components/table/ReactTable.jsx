@@ -1,82 +1,12 @@
-import React, { useMemo, useState } from "react";
-import { useTable, useAsyncDebounce, useFilters, useGlobalFilter, useSortBy } from "react-table";
+import React, { useMemo } from "react";
+import { useTable, useFilters, useGlobalFilter, useSortBy } from "react-table";
 import ModalBtn from "../buttons/ModalBtn";
 import AddToOrderBtn from "../buttons/AddToOrderBtn";
 import books from "../../data/books";
+import GlobalFilter from "./filters/GlobalFilter";
+import MultiCheckBoxColumnFilter from "./filters/MultiCheckBoxColumnFilter";
 
 import './ReactTable.css';
-
-function GlobalFilter({ preGlobalFilteredRows, globalFilter, setGlobalFilter }){
-    const count = preGlobalFilteredRows.length;
-    const [value, setValue] = useState(globalFilter)
-    const onChange = useAsyncDebounce(value => {
-        setGlobalFilter(value || undefined)
-    })
-
-    return (
-        <input
-            className='searchField'
-            type='text'
-            value={value || ""}
-            onChange={e => {
-                setValue(e.target.value);
-                onChange(e.target.value);
-            }}
-            placeholder={`Search from ${count} records...`}
-        />
-    )
-}
-
-function MultiCheckBoxColumnFilter({column: { setFilter, preFilteredRows, id }}) {
-
-    const options = useMemo(() => {
-        let counts = {};
-        preFilteredRows.forEach(x => {
-            x = x.values[id].toString();
-            counts[x] = (counts[x] || 0) + 1;
-        });
-        return counts;
-    }, [id, preFilteredRows]);
-
-    const [checked, setChecked] = useState(Object.keys(false));
-
-    const onChange = e => {
-        const t = e.target.name.toString();
-            setFilter(old => (old && old.includes(t) ? undefined : [t]));
-            checked.includes(t) && checked.length === 1
-                ? setChecked(Object.keys(false))
-                : setChecked([t]);
-    }
-
-    return (
-        <div className='checkBoxFilter'>
-            <div
-                style={{cursor: "pointer"}}
-                onClick={() => {
-                    setChecked(Object.keys(false));
-                    setFilter([]);
-                }}
-            >
-                <span>Show All</span>
-            </div>
-            {Object.entries(options).map(([option, count], i) => {
-                return (
-                    <label className='filterItem' key={i} htmlFor={option}>
-                        <input
-                            type="checkbox"
-                            name={option}
-                            id={option}
-                            checked={checked.includes(option)}
-                            onChange={onChange}
-                            title={`${option} (${count})`}
-                        />
-                        {option} ({count})
-                    </label>
-                );
-            })}
-        </div>
-    )
-}
 
 function ReactTable() {
     const data = useMemo(() => books, [])
@@ -181,7 +111,7 @@ function ReactTable() {
             <tbody {...getTableBodyProps()}>
             {rows.map((row) => {
                 prepareRow(row);
-                // console.log(row)
+                console.log(row)
                 return (
                     <tr {...row.getRowProps()}>
                         {row.cells.map(cell => {
@@ -194,7 +124,7 @@ function ReactTable() {
                                             ? <div className='BtnContainer'>
                                                 <ModalBtn headerTitle='Information' title={<i className='fa fa-info-circle'/>}
                                                           color='secondary'/>
-                                                <AddToOrderBtn/>
+                                                <AddToOrderBtn item={row.original._name}/>
                                             </div> : cell.render("Cell")}
                                 </td>
                             );
