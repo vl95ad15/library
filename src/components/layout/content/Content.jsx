@@ -1,14 +1,11 @@
-// import BooksTable from "../../table/Table"
-// import Filter from "../filter/Filter";
-import './Content.css'
 import ReactTable from "../../table/ReactTable";
 
-export default function Content(props) {
+import './Content.css'
+
+export default function Content() {
     return (
         <main id='main'>
-            {/*<Filter/>*/}
             <ReactTable/>
-            {/*<BooksTable/>*/}
         </main>
     )
 }

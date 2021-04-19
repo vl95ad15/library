@@ -19,7 +19,7 @@ function OrderModal() {
             {orderArr.length !== 0 ?
                 orderArr.map((item, i) =>
                         <div className='OrderItem' key={i}>
-                            <span>{item._name}</span>
+                            <span>{item}</span>
                             <span className='DeleteOrderItem' onClick={() => setOrders(removeItemByIndex(orderArr, item))}>
                                 <i className="fa fa-times-circle"/>
                             </span>

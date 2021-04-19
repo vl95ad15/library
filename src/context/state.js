@@ -10,7 +10,7 @@ const State = ({children}) => {
         userName: "",
         isLogged: false,
         booksArray: books,
-        orderedBooks: []
+        booksInOrder: []
     }
 
     const [state, dispatch] = useReducer(Reducer, initialState);
