@@ -1,12 +1,12 @@
-.BookItem:hover {
-    background-color: #e0e0e0;
-}
+/*.BookItem:hover {*/
+/*    background-color: #e0e0e0;*/
+/*}*/
 
-Table {
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
+/*Table {*/
+/*    box-shadow: 0 0 10px rgba(0,0,0,0.5);*/
+/*}*/
 
-.BtnContainer {
-    display: flex;
-    flex-direction: row;
-}
+/*.BtnContainer {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*}*/
