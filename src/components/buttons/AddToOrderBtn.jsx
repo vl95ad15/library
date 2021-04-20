@@ -12,14 +12,19 @@ function AddToOrderBtn(props) {
     const { isLogged } = useContext(Context)
     const [booksInArr, setBooksInArr] = useState([]);
 
-    const NewOrderItem = (book) => {
-        orderArr.splice(0, 0, book)
-        return orderArr
+    const NewOrderItem = (arr, book) => {
+        arr.splice(0, 0, book)
+        console.log(`Book ${book} was added to the order`)
+        console.log(orderArr)
+        return arr
     }
 
     return (
         <>
-            {isLogged ? <Button color='success' onClick={() => setBooksInArr(NewOrderItem(props.item))}><i className='fa fa-plus-circle'/></Button> : null}
+            {isLogged
+                ? <Button color='success' onClick={() => setBooksInArr(NewOrderItem(orderArr, props.item))}>
+                    <i className='fa fa-plus-circle'/></Button>
+                : null}
         </>
     )
 }
