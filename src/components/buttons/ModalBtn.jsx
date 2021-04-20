@@ -1,8 +1,6 @@
 import React, {useState} from "react";
 import {Button, Modal, ModalBody, ModalHeader} from "reactstrap";
 
-import './ModalBtn.css';
-
 function ModalBtn(props) {
 
     const {className, modalBody, title, headerTitle, color} = props;
