@@ -3,13 +3,13 @@ import Author from "../model/Author";
 const faker = require('faker');
 
 const MAX_AUTH_AMOUNT = 3;
-const MAX_BOOKS_AMOUNT = 11;
+const MAX_BOOKS_AMOUNT = 40;
 
 function getAuthors(authAmount = MAX_AUTH_AMOUNT) {
     const authorsArray = []
     for (let j = 0; j <= authAmount; j++) {
         const author:Author = new Author(faker.datatype.number(), faker.name.findName());
-        authorsArray.push(author)
+        authorsArray.push(author);
     }
     return authorsArray
 }
@@ -29,6 +29,7 @@ function getBooks(booksAmount = MAX_BOOKS_AMOUNT){
             faker.datatype.number()
         )
         books.push(book);
+        // console.log(JSON.stringify(book))
     }
 
     return books
