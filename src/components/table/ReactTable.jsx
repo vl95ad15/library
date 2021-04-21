@@ -1,15 +1,34 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState, useEffect } from "react";
+import { Spinner } from "reactstrap";
 import { useTable, useFilters, useGlobalFilter, useSortBy, usePagination } from "react-table";
 import ModalBtn from "../buttons/ModalBtn";
 import AddToOrderBtn from "../buttons/AddToOrderBtn";
-import books from "../../data/books";
 import GlobalFilter from "./filters/GlobalFilter";
 import MultiCheckBoxColumnFilter from "./filters/MultiCheckBoxColumnFilter";
+import axios from "axios";
 
 import './ReactTable.css';
 
 function ReactTable() {
-    const data = useMemo(() => books, [])
+    const [loadingData, setLoadingData] = useState(true);
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        async function getData() {
+            await axios
+                .get("http://localhost:4000/books")
+                .then((response) => {
+                    console.log(response.data);
+                    setData(response.data);
+                    setTimeout(() => setLoadingData(false), 1000);
+                });
+        }
+        if (loadingData) {
+            getData();
+        }
+    }, []);
+
+    // const data = useMemo(() => books, [])
     const columns = useMemo(() => [
         {
             Header: 'Name',
@@ -18,7 +37,9 @@ function ReactTable() {
         },
         {
             Header: 'Author',
-            accessor: 'author',
+            id: 'author',
+            accessor: data =>
+                data.authors.map(item => item.name).join(', '),
             disableFilters: true
         },
         {
@@ -92,101 +113,97 @@ function ReactTable() {
 
     return (
         <div className='tableAndGlobalFilter'>
-        <GlobalFilter preGlobalFilteredRows={preGlobalFilteredRows}
-                      globalFilter={state.globalFilter}
-                      setGlobalFilter={setGlobalFilter}/>
-            {headerGroups.map(headerGroup => (
-                <div {...headerGroup.getHeaderGroupProps()}>
-                    {headerGroup.headers.map(column => (
-                        <div key={column.render("Header")}>
-                            <div>{column.canFilter ? column.render("Filter") : null}</div>
+            {loadingData ? (
+                <Spinner className="spinner" color="info" />
+            ) : (
+                <>
+                    <GlobalFilter preGlobalFilteredRows={preGlobalFilteredRows}
+                                  globalFilter={state.globalFilter}
+                                  setGlobalFilter={setGlobalFilter}/>
+                    {headerGroups.map(headerGroup => (
+                        <div {...headerGroup.getHeaderGroupProps()}>
+                            {headerGroup.headers.map(column => (
+                                <div key={column.render("Header")}>
+                                    <div>{column.canFilter ? column.render("Filter") : null}</div>
+                                </div>
+                            ))}
                         </div>
                     ))}
-                </div>
-            ))}
-        <table {...getTableProps()}>
-            <thead>
-            {headerGroups.map(headerGroup => (
-                <tr {...headerGroup.getHeaderGroupProps()}>
-                    {headerGroup.headers.map(column => (
-                        <th
-                            {...column.getHeaderProps()}
-                        >
-                            {column.render('Header')}
-                        </th>
-                    ))}
-                </tr>
-            ))}
-            </thead>
-            <tbody {...getTableBodyProps()}>
-            {page.map((row) => {
-                prepareRow(row);
-                // console.log(row)
-                return (
-                    <tr {...row.getRowProps()}>
-                        {row.cells.map(cell => {
-                            // console.log(cell)
+                    <table {...getTableProps()}>
+                        <thead>
+                        {headerGroups.map(headerGroup => (
+                            <tr {...headerGroup.getHeaderGroupProps()}>
+                                {headerGroup.headers.map(column => (
+                                    <th
+                                        {...column.getHeaderProps()}
+                                    >
+                                        {column.render('Header')}
+                                    </th>
+                                ))}
+                            </tr>
+                        ))}
+                        </thead>
+                        <tbody {...getTableBodyProps()}>
+                        {page.map((row) => {
+                            prepareRow(row);
+                            // console.log(row)
                             return (
-                                <td {...cell.getCellProps()}>
-                                    {cell.column.Header === "Author"
-                                        ? row.original.authors.map(i => i.name).join(', ')
-                                        : cell.render("Cell") && cell.column.Header === ""
-                                            ? <div className='BtnContainer'>
-                                                <ModalBtn headerTitle='Information' title={<i className='fa fa-info-circle'/>}
-                                                          color='secondary'/>
-                                                <AddToOrderBtn item={row.original._name}/>
-                                            </div> : cell.render("Cell")}
-                                </td>
+                                <tr {...row.getRowProps()}>
+                                    {row.cells.map(cell => {
+                                        // console.log(cell)
+                                        return (
+                                            <td {...cell.getCellProps()}>
+                                                {cell.column.Header === ""
+                                                         ? <div className='BtnContainer'>
+                                                                <ModalBtn headerTitle='Information'
+                                                                          title={<i className='fa fa-info-circle'/>}
+                                                                          color='secondary'/>
+                                                                <AddToOrderBtn item={row.original.name}/>
+                                                          </div> : cell.render("Cell")}
+                                            </td>
+                                        );
+                                    })}
+                                </tr>
                             );
                         })}
-                    </tr>
-                );
-            })}
-            </tbody>
-        </table>
-            <div className="pagination">
-                <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-                    {'<<'}
-                </button>{' '}
-                <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-                    {'<'}
-                </button>{' '}
-                <button onClick={() => nextPage()} disabled={!canNextPage}>
-                    {'>'}
-                </button>{' '}
-                <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-                    {'>>'}
-                </button>{' '}
-                <span>
+                        </tbody>
+                    </table>
+                    <div className="pagination">
+                        <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>{'<<'}</button>
+                        <button onClick={() => previousPage()} disabled={!canPreviousPage}>{'<'}</button>
+                        <button onClick={() => nextPage()} disabled={!canNextPage}>{'>'}</button>
+                        <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>{'>>'}</button>
+                        <span>
           Page{' '}
-                    <strong>
+                            <strong>
             {pageIndex + 1} of {pageOptions.length}
           </strong>{' '}
         </span>
-                <span>
-          | Go to page:{' '}
-                    <input
-                        type="number"
-                        defaultValue={pageIndex + 1}
-                        onChange={e => {
-                            const page = e.target.value ? Number(e.target.value) - 1 : 0
-                            gotoPage(page)
-                        }}
-                    />
-        </span>{' '}
-                <select
-                    value={pageSize}
-                    onChange={e => {
-                        setPageSize(Number(e.target.value))
-                    }}
-                >
-                    {[10, 20, 30, 40, 50].map(pageSize => (
-                        <option key={pageSize} value={pageSize}>
-                            Show {pageSize}
-                        </option>
-                    ))}
-                </select>
-            </div>
+                        <span>| Go to page:{' '}
+                            <input
+                                type="number"
+                                defaultValue={pageIndex + 1}
+                                onChange={e => {
+                                    const page = e.target.value ? Number(e.target.value) - 1 : 0
+                                    gotoPage(page)
+                                }}
+                            />
+                        </span>{' '}
+                        <select
+                            value={pageSize}
+                            onChange={e => {
+                                setPageSize(Number(e.target.value))
+                            }}
+                        >
+                            {[10, 20, 30, 40].map(pageSize => (
+                                <option key={pageSize} value={pageSize}>
+                                    Show {pageSize}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                </>
+            )}
         </div>
     )
 }

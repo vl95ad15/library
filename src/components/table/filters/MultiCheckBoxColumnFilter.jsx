@@ -5,7 +5,7 @@ function MultiCheckBoxColumnFilter({column: { setFilter, preFilteredRows, id }})
     const options = useMemo(() => {
         let counts = {};
         preFilteredRows.forEach(x => {
-            x = x.values[id].toString();
+            x = x.values[id];
             counts[x] = (counts[x] || 0) + 1;
         });
         return counts;

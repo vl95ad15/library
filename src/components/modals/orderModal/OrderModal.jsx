@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { orderArr } from "../../buttons/AddToOrderBtn";
 import CollapseBtn from "../../buttons/CollapseBtn";
-
-import "./OrderModal.css";
 import OrderSettings from "./orderSettings/OrderSettings";
+import "./OrderModal.css";
+
 
 function OrderModal() {
     const [orders, setOrders] = useState([])
@@ -34,7 +34,7 @@ function OrderModal() {
         <div className='OrderBox'>
             {orderArr.length !== 0 ?
                 orderArr.map((item, i) =>
-                        <CollapseBtn key={i}
+                        <CollapseBtn key={i + item}
                                      className='OrderItem'
                                      title={<span className="OrderItemName">{item}</span>}
                                      closeBtn={deleteItemBtn(item)}
