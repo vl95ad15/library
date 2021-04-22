@@ -16,45 +16,789 @@
     }
   ],
   "books": [
-    {"id":51425,"ISBN":99981,"name":"Denmark","authors":[{"name":"Ted Vandervort DDS","id":89725}],"pages":378,"status":"available","published":2020,"genre":"Reggae","cost":71649},
-    {"id":13053,"ISBN":18524,"name":"Universal","authors":[{"name":"Benny Wilderman IV","id":29300},{"name":"Miss Ronald Jenkins","id":9866}],"pages":158,"status":"available","published":2021,"genre":"Rap","cost":97521},
-    {"id":70768,"ISBN":29739,"name":"Taiwan","authors":[{"name":"Shari Douglas","id":36979},{"name":"Gene Kunze","id":45451}],"pages":181,"status":"available","published":2021,"genre":"Reggae","cost":49002},
-    {"id":88034,"ISBN":36365,"name":"Borders","authors":[{"name":"Monica Ledner Jr.","id":64520},{"name":"Jackie Volkman","id":65360},{"name":"Martin Kshlerin","id":27703}],"pages":208,"status":"unavailable","published":2020,"genre":"Metal","cost":23843},
-    {"id":99141,"ISBN":96227,"name":"Chips","authors":[{"name":"Clinton Schamberger","id":33201},{"name":"Maggie Lang","id":21232},{"name":"Melba Goodwin","id":12509}],"pages":509,"status":"unavailable","published":2021,"genre":"Reggae","cost":71308},
-    {"id":49800,"ISBN":51189,"name":"Architect","authors":[{"name":"Dr. Mathew Dickens","id":46207}],"pages":146,"status":"available","published":2021,"genre":"Metal","cost":74466},
-    {"id":4152,"ISBN":35105,"name":"backing","authors":[{"name":"Ramona Berge","id":96172}],"pages":502,"status":"available","published":2021,"genre":"Rap","cost":32599},
-    {"id":95310,"ISBN":20778,"name":"Bike","authors":[{"name":"Mike Skiles","id":84485},{"name":"Irving Labadie V","id":21829},{"name":"Warren Crona","id":2371}],"pages":31,"status":"available","published":2021,"genre":"Reggae","cost":22847},
-    {"id":89146,"ISBN":96225,"name":"Bridge","authors":[{"name":"Sidney Koss","id":33434},{"name":"Henry Wisozk","id":86962},{"name":"Ms. Israel Feil","id":17327}],"pages":573,"status":"unavailable","published":2020,"genre":"Rock","cost":96068},
-    {"id":68217,"ISBN":70833,"name":"Director","authors":[{"name":"Lucille Monahan","id":93144}],"pages":646,"status":"available","published":2021,"genre":"Jazz","cost":22620},
-    {"id":78838,"ISBN":81193,"name":"generation","authors":[{"name":"Ella Ankunding","id":30446},{"name":"Kristin Marquardt II","id":80518},{"name":"Lana Rosenbaum","id":79469}],"pages":240,"status":"unavailable","published":2020,"genre":"World","cost":95316},
-    {"id":96044,"ISBN":23072,"name":"Associate","authors":[{"name":"Nathaniel Parisian","id":57366}],"pages":453,"status":"available","published":2021,"genre":"Rap","cost":21314},
-    {"id":94189,"ISBN":19893,"name":"envisioneer","authors":[{"name":"Meredith Koepp","id":29169}],"pages":157,"status":"unavailable","published":2020,"genre":"Funk","cost":54481},
-    {"id":46815,"ISBN":29753,"name":"USB","authors":[{"name":"Faye Lind","id":55019}],"pages":502,"status":"available","published":2020,"genre":"Rock","cost":98323},
-    {"id":44894,"ISBN":97062,"name":"1080p","authors":[{"name":"Arlene Legros","id":46277},{"name":"Peter Fritsch MD","id":25407},{"name":"Alejandro Abbott","id":30248}],"pages":196,"status":"unavailable","published":2021,"genre":"World","cost":51444},
-    {"id":59934,"ISBN":14576,"name":"Home","authors":[{"name":"Luz Lang","id":48831},{"name":"Laverne Jacobi","id":55555},{"name":"Everett Hackett","id":49263}],"pages":320,"status":"available","published":2021,"genre":"Funk","cost":44585},
-    {"id":2048,"ISBN":16767,"name":"incremental","authors":[{"name":"Sherri Bayer","id":69893},{"name":"Brittany Champlin","id":5547}],"pages":751,"status":"unavailable","published":2021,"genre":"Metal","cost":19871},
-    {"id":14313,"ISBN":64745,"name":"plum","authors":[{"name":"Leslie Keebler","id":21762},{"name":"Lindsay Gibson II","id":68002},{"name":"Alberto Becker","id":57904}],"pages":631,"status":"available","published":2020,"genre":"Metal","cost":71007},
-    {"id":22347,"ISBN":42745,"name":"RAM","authors":[{"name":"Shelly Dare","id":64987}],"pages":547,"status":"available","published":2021,"genre":"World","cost":75041},
-    {"id":70499,"ISBN":59130,"name":"Team-oriented","authors":[{"name":"Gerardo Graham","id":17498},{"name":"Michael Hilpert","id":59005}],"pages":164,"status":"unavailable","published":2020,"genre":"Rock","cost":98406},
-    {"id":63373,"ISBN":21834,"name":"dedicated","authors":[{"name":"Irene Graham","id":63711}],"pages":482,"status":"available","published":2020,"genre":"World","cost":13925},
-    {"id":28841,"ISBN":97651,"name":"vertical","authors":[{"name":"Robyn Hyatt","id":3524}],"pages":50,"status":"available","published":2021,"genre":"Jazz","cost":3948},
-    {"id":38090,"ISBN":89019,"name":"Berkshire","authors":[{"name":"Wesley Hane","id":38904},{"name":"Lloyd Weimann","id":52858}],"pages":685,"status":"available","published":2020,"genre":"Rock","cost":99261},
-    {"id":27884,"ISBN":38762,"name":"Auto","authors":[{"name":"Bobby Metz","id":4099},{"name":"Bobbie Tromp","id":85727},{"name":"Ashley Dickinson","id":79208}],"pages":571,"status":"unavailable","published":2020,"genre":"Funk","cost":61495},
-    {"id":72349,"ISBN":65233,"name":"Multi-channelled","authors":[{"name":"Ana West II","id":13274}],"pages":414,"status":"available","published":2021,"genre":"Jazz","cost":61079},
-    {"id":28130,"ISBN":93607,"name":"Bacon","authors":[{"name":"Amelia Roob","id":48671},{"name":"Angel Jones","id":94341}],"pages":258,"status":"unavailable","published":2020,"genre":"Metal","cost":69263},
-    {"id":39451,"ISBN":96613,"name":"XML","authors":[{"name":"Roberto Batz","id":79584}],"pages":434,"status":"available","published":2020,"genre":"Funk","cost":76862},
-    {"id":69365,"ISBN":58594,"name":"Rubber","authors":[{"name":"Angelina MacGyver","id":38747},{"name":"Orlando Mohr","id":69852}],"pages":516,"status":"available","published":2020,"genre":"Rap","cost":3862},
-    {"id":94420,"ISBN":53151,"name":"Samoa","authors":[{"name":"Donnie Quigley","id":94539},{"name":"Leona Hauck","id":74773}],"pages":553,"status":"available","published":2020,"genre":"Funk","cost":11344},
-    {"id":17932,"ISBN":83687,"name":"feed","authors":[{"name":"Wayne Klein","id":19003}],"pages":254,"status":"available","published":2020,"genre":"Jazz","cost":32684},
-    {"id":32747,"ISBN":65892,"name":"platforms","authors":[{"name":"Sandy Goyette II","id":45741}],"pages":792,"status":"unavailable","published":2021,"genre":"Jazz","cost":67348},
-    {"id":70609,"ISBN":78736,"name":"mission-critical","authors":[{"name":"Lorenzo Abernathy","id":97785},{"name":"Belinda Langworth","id":63075}],"pages":397,"status":"available","published":2021,"genre":"Jazz","cost":93620},
-    {"id":15541,"ISBN":49421,"name":"Keyboard","authors":[{"name":"Melanie Gerlach","id":70853}],"pages":692,"status":"unavailable","published":2020,"genre":"World","cost":96820},
-    {"id":96355,"ISBN":60725,"name":"SAS","authors":[{"name":"Maurice Wolff","id":52026},{"name":"Angel Ullrich V","id":93232},{"name":"Mr. Norma Bruen","id":37391}],"pages":689,"status":"unavailable","published":2020,"genre":"Rock","cost":82247},
-    {"id":58526,"ISBN":80450,"name":"Human","authors":[{"name":"Doreen Weber","id":34449},{"name":"Damon Dooley","id":8616},{"name":"Marcia Ratke","id":65541}],"pages":409,"status":"unavailable","published":2021,"genre":"Reggae","cost":65348},
-    {"id":61979,"ISBN":74384,"name":"azure","authors":[{"name":"Manuel Wisozk","id":42672},{"name":"Trevor Dibbert","id":66319}],"pages":149,"status":"unavailable","published":2020,"genre":"Rock","cost":20154},
-    {"id":16439,"ISBN":24060,"name":"indexing","authors":[{"name":"Stuart Jacobi","id":58945},{"name":"Bob Zieme","id":72757}],"pages":209,"status":"available","published":2020,"genre":"Rap","cost":1386},
-    {"id":66025,"ISBN":18979,"name":"monitor","authors":[{"name":"Cecelia O'Connell","id":81139},{"name":"Hubert Padberg","id":73962},{"name":"Stewart Hoppe","id":69399}],"pages":53,"status":"unavailable","published":2020,"genre":"World","cost":40409},
-    {"id":12344,"ISBN":66863,"name":"Illinois","authors":[{"name":"Irma Monahan","id":41374}],"pages":179,"status":"available","published":2020,"genre":"Metal","cost":25412},
-    {"id":10393,"ISBN":87678,"name":"Cotton","authors":[{"name":"Glenda Kilback","id":41035},{"name":"Denise Kunde","id":64706}],"pages":282,"status":"unavailable","published":2020,"genre":"Funk","cost":67645}
+    {
+      "id": 51425,
+      "ISBN": 99981,
+      "name": "Denmark",
+      "authors": [
+        {
+          "name": "Ted Vandervort DDS",
+          "id": 89725
+        }
+      ],
+      "pages": 378,
+      "status": "available",
+      "published": 2020,
+      "genre": "Fantasy",
+      "cost": 71649
+    },
+    {
+      "id": 13053,
+      "ISBN": 18524,
+      "name": "Universal",
+      "authors": [
+        {
+          "name": "Benny Wilderman IV",
+          "id": 29300
+        },
+        {
+          "name": "Miss Ronald Jenkins",
+          "id": 9866
+        }
+      ],
+      "pages": 158,
+      "status": "available",
+      "published": 2021,
+      "genre": "Mystery",
+      "cost": 97521
+    },
+    {
+      "id": 70768,
+      "ISBN": 29739,
+      "name": "Taiwan",
+      "authors": [
+        {
+          "name": "Shari Douglas",
+          "id": 36979
+        },
+        {
+          "name": "Gene Kunze",
+          "id": 45451
+        }
+      ],
+      "pages": 181,
+      "status": "available",
+      "published": 2021,
+      "genre": "Fantasy",
+      "cost": 49002
+    },
+    {
+      "id": 88034,
+      "ISBN": 36365,
+      "name": "Borders",
+      "authors": [
+        {
+          "name": "Monica Ledner Jr.",
+          "id": 64520
+        },
+        {
+          "name": "Jackie Volkman",
+          "id": 65360
+        },
+        {
+          "name": "Martin Kshlerin",
+          "id": 27703
+        }
+      ],
+      "pages": 208,
+      "status": "unavailable",
+      "published": 2020,
+      "genre": "Thriller",
+      "cost": 23843
+    },
+    {
+      "id": 99141,
+      "ISBN": 96227,
+      "name": "Chips",
+      "authors": [
+        {
+          "name": "Clinton Schamberger",
+          "id": 33201
+        },
+        {
+          "name": "Maggie Lang",
+          "id": 21232
+        },
+        {
+          "name": "Melba Goodwin",
+          "id": 12509
+        }
+      ],
+      "pages": 509,
+      "status": "unavailable",
+      "published": 2021,
+      "genre": "Fantasy",
+      "cost": 71308
+    },
+    {
+      "id": 49800,
+      "ISBN": 51189,
+      "name": "Architect",
+      "authors": [
+        {
+          "name": "Dr. Mathew Dickens",
+          "id": 46207
+        }
+      ],
+      "pages": 146,
+      "status": "available",
+      "published": 2021,
+      "genre": "Thriller",
+      "cost": 74466
+    },
+    {
+      "id": 4152,
+      "ISBN": 35105,
+      "name": "backing",
+      "authors": [
+        {
+          "name": "Ramona Berge",
+          "id": 96172
+        }
+      ],
+      "pages": 502,
+      "status": "available",
+      "published": 2021,
+      "genre": "Mystery",
+      "cost": 32599
+    },
+    {
+      "id": 95310,
+      "ISBN": 20778,
+      "name": "Bike",
+      "authors": [
+        {
+          "name": "Mike Skiles",
+          "id": 84485
+        },
+        {
+          "name": "Irving Labadie V",
+          "id": 21829
+        },
+        {
+          "name": "Warren Crona",
+          "id": 2371
+        }
+      ],
+      "pages": 31,
+      "status": "available",
+      "published": 2021,
+      "genre": "Fantasy",
+      "cost": 22847
+    },
+    {
+      "id": 89146,
+      "ISBN": 96225,
+      "name": "Bridge",
+      "authors": [
+        {
+          "name": "Sidney Koss",
+          "id": 33434
+        },
+        {
+          "name": "Henry Wisozk",
+          "id": 86962
+        },
+        {
+          "name": "Ms. Israel Feil",
+          "id": 17327
+        }
+      ],
+      "pages": 573,
+      "status": "unavailable",
+      "published": 2020,
+      "genre": "Romance",
+      "cost": 96068
+    },
+    {
+      "id": 68217,
+      "ISBN": 70833,
+      "name": "Director",
+      "authors": [
+        {
+          "name": "Lucille Monahan",
+          "id": 93144
+        }
+      ],
+      "pages": 646,
+      "status": "available",
+      "published": 2021,
+      "genre": "Western",
+      "cost": 22620
+    },
+    {
+      "id": 78838,
+      "ISBN": 81193,
+      "name": "generation",
+      "authors": [
+        {
+          "name": "Ella Ankunding",
+          "id": 30446
+        },
+        {
+          "name": "Kristin Marquardt II",
+          "id": 80518
+        },
+        {
+          "name": "Lana Rosenbaum",
+          "id": 79469
+        }
+      ],
+      "pages": 240,
+      "status": "unavailable",
+      "published": 2020,
+      "genre": "Dystopian",
+      "cost": 95316
+    },
+    {
+      "id": 96044,
+      "ISBN": 23072,
+      "name": "Associate",
+      "authors": [
+        {
+          "name": "Nathaniel Parisian",
+          "id": 57366
+        }
+      ],
+      "pages": 453,
+      "status": "available",
+      "published": 2021,
+      "genre": "Mystery",
+      "cost": 21314
+    },
+    {
+      "id": 94189,
+      "ISBN": 19893,
+      "name": "envisioneer",
+      "authors": [
+        {
+          "name": "Meredith Koepp",
+          "id": 29169
+        }
+      ],
+      "pages": 157,
+      "status": "unavailable",
+      "published": 2020,
+      "genre": "Contemporary",
+      "cost": 54481
+    },
+    {
+      "id": 46815,
+      "ISBN": 29753,
+      "name": "USB",
+      "authors": [
+        {
+          "name": "Faye Lind",
+          "id": 55019
+        }
+      ],
+      "pages": 502,
+      "status": "available",
+      "published": 2020,
+      "genre": "Romance",
+      "cost": 98323
+    },
+    {
+      "id": 44894,
+      "ISBN": 97062,
+      "name": "1080p",
+      "authors": [
+        {
+          "name": "Arlene Legros",
+          "id": 46277
+        },
+        {
+          "name": "Peter Fritsch MD",
+          "id": 25407
+        },
+        {
+          "name": "Alejandro Abbott",
+          "id": 30248
+        }
+      ],
+      "pages": 196,
+      "status": "unavailable",
+      "published": 2021,
+      "genre": "Dystopian",
+      "cost": 51444
+    },
+    {
+      "id": 59934,
+      "ISBN": 14576,
+      "name": "Home",
+      "authors": [
+        {
+          "name": "Luz Lang",
+          "id": 48831
+        },
+        {
+          "name": "Laverne Jacobi",
+          "id": 55555
+        },
+        {
+          "name": "Everett Hackett",
+          "id": 49263
+        }
+      ],
+      "pages": 320,
+      "status": "available",
+      "published": 2021,
+      "genre": "Contemporary",
+      "cost": 44585
+    },
+    {
+      "id": 2048,
+      "ISBN": 16767,
+      "name": "incremental",
+      "authors": [
+        {
+          "name": "Sherri Bayer",
+          "id": 69893
+        },
+        {
+          "name": "Brittany Champlin",
+          "id": 5547
+        }
+      ],
+      "pages": 751,
+      "status": "unavailable",
+      "published": 2021,
+      "genre": "Thriller",
+      "cost": 19871
+    },
+    {
+      "id": 14313,
+      "ISBN": 64745,
+      "name": "plum",
+      "authors": [
+        {
+          "name": "Leslie Keebler",
+          "id": 21762
+        },
+        {
+          "name": "Lindsay Gibson II",
+          "id": 68002
+        },
+        {
+          "name": "Alberto Becker",
+          "id": 57904
+        }
+      ],
+      "pages": 631,
+      "status": "available",
+      "published": 2020,
+      "genre": "Thriller",
+      "cost": 71007
+    },
+    {
+      "id": 22347,
+      "ISBN": 42745,
+      "name": "RAM",
+      "authors": [
+        {
+          "name": "Shelly Dare",
+          "id": 64987
+        }
+      ],
+      "pages": 547,
+      "status": "available",
+      "published": 2021,
+      "genre": "Dystopian",
+      "cost": 75041
+    },
+    {
+      "id": 70499,
+      "ISBN": 59130,
+      "name": "Team-oriented",
+      "authors": [
+        {
+          "name": "Gerardo Graham",
+          "id": 17498
+        },
+        {
+          "name": "Michael Hilpert",
+          "id": 59005
+        }
+      ],
+      "pages": 164,
+      "status": "unavailable",
+      "published": 2020,
+      "genre": "Romance",
+      "cost": 98406
+    },
+    {
+      "id": 63373,
+      "ISBN": 21834,
+      "name": "dedicated",
+      "authors": [
+        {
+          "name": "Irene Graham",
+          "id": 63711
+        }
+      ],
+      "pages": 482,
+      "status": "available",
+      "published": 2020,
+      "genre": "Dystopian",
+      "cost": 13925
+    },
+    {
+      "id": 28841,
+      "ISBN": 97651,
+      "name": "vertical",
+      "authors": [
+        {
+          "name": "Robyn Hyatt",
+          "id": 3524
+        }
+      ],
+      "pages": 50,
+      "status": "available",
+      "published": 2021,
+      "genre": "Western",
+      "cost": 3948
+    },
+    {
+      "id": 38090,
+      "ISBN": 89019,
+      "name": "Berkshire",
+      "authors": [
+        {
+          "name": "Wesley Hane",
+          "id": 38904
+        },
+        {
+          "name": "Lloyd Weimann",
+          "id": 52858
+        }
+      ],
+      "pages": 685,
+      "status": "available",
+      "published": 2020,
+      "genre": "Romance",
+      "cost": 99261
+    },
+    {
+      "id": 27884,
+      "ISBN": 38762,
+      "name": "Auto",
+      "authors": [
+        {
+          "name": "Bobby Metz",
+          "id": 4099
+        },
+        {
+          "name": "Bobbie Tromp",
+          "id": 85727
+        },
+        {
+          "name": "Ashley Dickinson",
+          "id": 79208
+        }
+      ],
+      "pages": 571,
+      "status": "unavailable",
+      "published": 2020,
+      "genre": "Contemporary",
+      "cost": 61495
+    },
+    {
+      "id": 72349,
+      "ISBN": 65233,
+      "name": "Multi-channelled",
+      "authors": [
+        {
+          "name": "Ana West II",
+          "id": 13274
+        }
+      ],
+      "pages": 414,
+      "status": "available",
+      "published": 2021,
+      "genre": "Western",
+      "cost": 61079
+    },
+    {
+      "id": 28130,
+      "ISBN": 93607,
+      "name": "Bacon",
+      "authors": [
+        {
+          "name": "Amelia Roob",
+          "id": 48671
+        },
+        {
+          "name": "Angel Jones",
+          "id": 94341
+        }
+      ],
+      "pages": 258,
+      "status": "unavailable",
+      "published": 2020,
+      "genre": "Thriller",
+      "cost": 69263
+    },
+    {
+      "id": 39451,
+      "ISBN": 96613,
+      "name": "XML",
+      "authors": [
+        {
+          "name": "Roberto Batz",
+          "id": 79584
+        }
+      ],
+      "pages": 434,
+      "status": "available",
+      "published": 2020,
+      "genre": "Contemporary",
+      "cost": 76862
+    },
+    {
+      "id": 69365,
+      "ISBN": 58594,
+      "name": "Rubber",
+      "authors": [
+        {
+          "name": "Angelina MacGyver",
+          "id": 38747
+        },
+        {
+          "name": "Orlando Mohr",
+          "id": 69852
+        }
+      ],
+      "pages": 516,
+      "status": "available",
+      "published": 2020,
+      "genre": "Mystery",
+      "cost": 3862
+    },
+    {
+      "id": 94420,
+      "ISBN": 53151,
+      "name": "Samoa",
+      "authors": [
+        {
+          "name": "Donnie Quigley",
+          "id": 94539
+        },
+        {
+          "name": "Leona Hauck",
+          "id": 74773
+        }
+      ],
+      "pages": 553,
+      "status": "available",
+      "published": 2020,
+      "genre": "Contemporary",
+      "cost": 11344
+    },
+    {
+      "id": 17932,
+      "ISBN": 83687,
+      "name": "feed",
+      "authors": [
+        {
+          "name": "Wayne Klein",
+          "id": 19003
+        }
+      ],
+      "pages": 254,
+      "status": "available",
+      "published": 2020,
+      "genre": "Western",
+      "cost": 32684
+    },
+    {
+      "id": 32747,
+      "ISBN": 65892,
+      "name": "platforms",
+      "authors": [
+        {
+          "name": "Sandy Goyette II",
+          "id": 45741
+        }
+      ],
+      "pages": 792,
+      "status": "unavailable",
+      "published": 2021,
+      "genre": "Western",
+      "cost": 67348
+    },
+    {
+      "id": 70609,
+      "ISBN": 78736,
+      "name": "mission-critical",
+      "authors": [
+        {
+          "name": "Lorenzo Abernathy",
+          "id": 97785
+        },
+        {
+          "name": "Belinda Langworth",
+          "id": 63075
+        }
+      ],
+      "pages": 397,
+      "status": "available",
+      "published": 2021,
+      "genre": "Western",
+      "cost": 93620
+    },
+    {
+      "id": 15541,
+      "ISBN": 49421,
+      "name": "Keyboard",
+      "authors": [
+        {
+          "name": "Melanie Gerlach",
+          "id": 70853
+        }
+      ],
+      "pages": 692,
+      "status": "unavailable",
+      "published": 2020,
+      "genre": "Dystopian",
+      "cost": 96820
+    },
+    {
+      "id": 96355,
+      "ISBN": 60725,
+      "name": "SAS",
+      "authors": [
+        {
+          "name": "Maurice Wolff",
+          "id": 52026
+        },
+        {
+          "name": "Angel Ullrich V",
+          "id": 93232
+        },
+        {
+          "name": "Mr. Norma Bruen",
+          "id": 37391
+        }
+      ],
+      "pages": 689,
+      "status": "unavailable",
+      "published": 2020,
+      "genre": "Romance",
+      "cost": 82247
+    },
+    {
+      "id": 58526,
+      "ISBN": 80450,
+      "name": "Human",
+      "authors": [
+        {
+          "name": "Doreen Weber",
+          "id": 34449
+        },
+        {
+          "name": "Damon Dooley",
+          "id": 8616
+        },
+        {
+          "name": "Marcia Ratke",
+          "id": 65541
+        }
+      ],
+      "pages": 409,
+      "status": "unavailable",
+      "published": 2021,
+      "genre": "Fantasy",
+      "cost": 65348
+    },
+    {
+      "id": 61979,
+      "ISBN": 74384,
+      "name": "azure",
+      "authors": [
+        {
+          "name": "Manuel Wisozk",
+          "id": 42672
+        },
+        {
+          "name": "Trevor Dibbert",
+          "id": 66319
+        }
+      ],
+      "pages": 149,
+      "status": "unavailable",
+      "published": 2020,
+      "genre": "Romance",
+      "cost": 20154
+    },
+    {
+      "id": 16439,
+      "ISBN": 24060,
+      "name": "indexing",
+      "authors": [
+        {
+          "name": "Stuart Jacobi",
+          "id": 58945
+        },
+        {
+          "name": "Bob Zieme",
+          "id": 72757
+        }
+      ],
+      "pages": 209,
+      "status": "available",
+      "published": 2020,
+      "genre": "Mystery",
+      "cost": 1386
+    },
+    {
+      "id": 66025,
+      "ISBN": 18979,
+      "name": "monitor",
+      "authors": [
+        {
+          "name": "Cecelia O'Connell",
+          "id": 81139
+        },
+        {
+          "name": "Hubert Padberg",
+          "id": 73962
+        },
+        {
+          "name": "Stewart Hoppe",
+          "id": 69399
+        }
+      ],
+      "pages": 53,
+      "status": "unavailable",
+      "published": 2020,
+      "genre": "Dystopian",
+      "cost": 40409
+    },
+    {
+      "id": 12344,
+      "ISBN": 66863,
+      "name": "Illinois",
+      "authors": [
+        {
+          "name": "Irma Monahan",
+          "id": 41374
+        }
+      ],
+      "pages": 179,
+      "status": "available",
+      "published": 2020,
+      "genre": "Thriller",
+      "cost": 25412
+    },
+    {
+      "id": 10393,
+      "ISBN": 87678,
+      "name": "Cotton",
+      "authors": [
+        {
+          "name": "Glenda Kilback",
+          "id": 41035
+        },
+        {
+          "name": "Denise Kunde",
+          "id": 64706
+        }
+      ],
+      "pages": 282,
+      "status": "unavailable",
+      "published": 2020,
+      "genre": "Contemporary",
+      "cost": 67645
+    }
   ]
 }

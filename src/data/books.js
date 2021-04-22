@@ -13,13 +13,23 @@
 //     }
 //     return authorsArray
 // }
-
-// import { client } from "../client";
 //
-// async function getBooks(){
-//     const books = await client.getData()
-//     Promise.all([books]).then(books.map(book => book))
-//     console.log(books)
+// function getBooks(){
+//     const books = [];
+//     for (let i = 0; i < booksAmount; i++) {
+//         const book:Book = new Book(
+//             faker.datatype.number(),
+//             faker.datatype.number(),
+//             faker.random.word(),
+//             getAuthors(Math.floor(Math.random() * 3)),
+//             Math.floor(faker.datatype.number() / 125),
+//             faker.datatype.boolean().toString(),
+//             faker.date.past().getFullYear(),
+//             faker.music.genre(),
+//             faker.datatype.number()
+//         )
+//         books.push(book);
+//     }
 //     return books
 // }
 //

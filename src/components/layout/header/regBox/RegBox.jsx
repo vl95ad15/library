@@ -5,6 +5,7 @@ import ModalBtn from "../../../buttons/ModalBtn";
 import LoginModal from "../../../modals/loginModal/LoginModal";
 import SignupModal from "../../../modals/signupModal/SignupModal";
 import OrderModal from "../../../modals/orderModal/OrderModal";
+import UserInfo from "../../../modals/userInfo/UserInfo";
 import './RegBox.css'
 
 function RegBox() {
@@ -20,7 +21,8 @@ function RegBox() {
     } else {
         return (
             <div className='LogoutBox'>
-                <p>{userName}</p>
+                <p className='UserInfo'>{userName}</p>
+                <UserInfo/>
                 <ModalBtn color='info' title={<i className="fa fa-book"/>} headerTitle='My order' modalBody={<OrderModal/>}/>
                 <Button onClick={logOut}>Logout</Button>
             </div>

@@ -12,6 +12,14 @@
     font-size: large;
 }
 
+.UserInfo {
+    cursor: pointer;
+}
+
+.UserInfo:hover {
+    color: #a5a5a5;
+}
+
 .OrderCounter {
     margin-right: 5px;
 }

@@ -21,10 +21,10 @@ function ReactTable() {
                     console.log(response.data);
                     setData(response.data);
                     setTimeout(() => setLoadingData(false), 1000);
-                });
+                }, (reason) => console.log(reason));
         }
         if (loadingData) {
-            getData();
+            getData().then(r => r);
         }
     }, []);
 
@@ -71,24 +71,19 @@ function ReactTable() {
     ], []);
 
     const filterTypes = useMemo(() => ({
-            text: (rows, id, filterValue) => {
-                return rows.filter(row => {
-                    const rowValue = row.values[id];
-                    return rowValue !== undefined
-                        ? String(rowValue)
-                            .toLowerCase()
-                            .startsWith(String(filterValue).toLowerCase())
-                        : true;
-                });
-            }
-        }), []);
+        text: (rows, id, filterValue) => {
+            return rows.filter(row => {
+                const rowValue = row.values[id];
+                return rowValue !== undefined
+                    ? String(rowValue)
+                        .toLowerCase()
+                        .startsWith(String(filterValue).toLowerCase())
+                    : true;
+            });
+        }
+    }), []);
 
-    const defaultColumn = useMemo(
-        () => ({
-            Filter: false
-        }),
-        []
-    );
+    const defaultColumn = useMemo(() => ({ Filter: false }), []);
 
     const {
         getTableProps,
@@ -97,7 +92,6 @@ function ReactTable() {
         preGlobalFilteredRows,
         setGlobalFilter,
         state,
-        rows,
         prepareRow,
         page,
         canPreviousPage,
@@ -112,7 +106,7 @@ function ReactTable() {
     } = useTable({ columns, data, defaultColumn, filterTypes, initialState: { pageIndex: 0 } }, useFilters, useGlobalFilter, useSortBy, usePagination)
 
     return (
-        <div className='tableAndGlobalFilter'>
+        <div className='TableWrapper'>
             {loadingData ? (
                 <Spinner className="spinner" color="info" />
             ) : (
@@ -134,10 +128,8 @@ function ReactTable() {
                         {headerGroups.map(headerGroup => (
                             <tr {...headerGroup.getHeaderGroupProps()}>
                                 {headerGroup.headers.map(column => (
-                                    <th
-                                        {...column.getHeaderProps()}
-                                    >
-                                        {column.render('Header')}
+                                    <th {...column.getHeaderProps()}>
+                                        { column.render('Header') }
                                     </th>
                                 ))}
                             </tr>
@@ -146,20 +138,18 @@ function ReactTable() {
                         <tbody {...getTableBodyProps()}>
                         {page.map((row) => {
                             prepareRow(row);
-                            // console.log(row)
                             return (
                                 <tr {...row.getRowProps()}>
                                     {row.cells.map(cell => {
-                                        // console.log(cell)
                                         return (
                                             <td {...cell.getCellProps()}>
                                                 {cell.column.Header === ""
-                                                         ? <div className='BtnContainer'>
-                                                                <ModalBtn headerTitle='Information'
-                                                                          title={<i className='fa fa-info-circle'/>}
-                                                                          color='secondary'/>
-                                                                <AddToOrderBtn item={row.original.name}/>
-                                                          </div> : cell.render("Cell")}
+                                                    ? <div className='BtnContainer'>
+                                                        <ModalBtn headerTitle='Information'
+                                                                  title={<i className='fa fa-info-circle'/>}
+                                                                  color='secondary'/>
+                                                        <AddToOrderBtn item={row.original.name}/>
+                                                    </div> : cell.render("Cell")}
                                             </td>
                                         );
                                     })}
@@ -174,11 +164,9 @@ function ReactTable() {
                         <button onClick={() => nextPage()} disabled={!canNextPage}>{'>'}</button>
                         <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>{'>>'}</button>
                         <span>
-          Page{' '}
-                            <strong>
-            {pageIndex + 1} of {pageOptions.length}
-          </strong>{' '}
-        </span>
+                            Page{' '}
+                            <strong>{pageIndex + 1} of {pageOptions.length}</strong>{' '}
+                        </span>
                         <span>| Go to page:{' '}
                             <input
                                 type="number"
@@ -191,10 +179,7 @@ function ReactTable() {
                         </span>{' '}
                         <select
                             value={pageSize}
-                            onChange={e => {
-                                setPageSize(Number(e.target.value))
-                            }}
-                        >
+                            onChange={e => { setPageSize(Number(e.target.value))}}>
                             {[10, 20, 30, 40].map(pageSize => (
                                 <option key={pageSize} value={pageSize}>
                                     Show {pageSize}
